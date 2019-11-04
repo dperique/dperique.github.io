@@ -1,0 +1,161 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR"
+ content="Mozilla/4.74 [en] (X11; U; Linux 2.0.36 i686) [Netscape]">
+  <title>NetPST User Guide (only page one)</title>
+</head>
+<body>
+<center><b><font size="+1">Network Protocol Simulation Tool</font></b> <br>
+<b><font size="+1">(NetPST)</font></b> <br>
+<span style="font-weight: bold;">Snippet of User Guide</span><br>
+<hr width="100%">
+<div style="text-align: left;"><b><font size="+1">Installation
+Requirements</font></b></div>
+</center>
+<blockquote>To install the NetPST, you will need (as a minimum):
+  <blockquote> <li> Pentium II 300Mhz, 128M, 200M hd, 17" High Res
+Color
+Monitor, 1 or more Ethernet ports</li>
+    <li> Redhat Linux 8.0, 9.0 with graphics card that supports X
+windows</li>
+    <li> Root privileges (for sending raw Ethernet packets)</li>
+  </blockquote>
+NetPST can be run on a smaller, less powerful machine but only the
+above or better is supported.</blockquote>
+<b><font size="+1">A Brief Description
+of NetPST</font></b>
+<blockquote>The Network Protocol Simulation Tool (NetPST) is a software
+tool
+designed for testing network protocols (with a specialty in Internet
+routing
+protocols).&nbsp; It is a tcl/tk interpreter enhanced with APIs and
+libraries
+that allow a user to simulate network protocols and configure network
+devices.
+  <p>NetPST is unique in its facilities for being able to write
+automated test scripts for simulating different protocol behavior. </p>
+  <p>The NetPST contains: </p>
+  <ul>
+    <li> Off the shelf software components: tcl8.3, tk8.3, itcl3.1,
+itk3.1,
+expect5.31, libreadline-based CLI; NetPST can also be loaded as a tcl
+package
+using the tcl "package require" command.&nbsp; Information about tcl,
+tk,
+itcl, itk, expect, etc. is available at <a href="http://www.tcltk.com">www.tcltk.com.</a></li>
+    <li> Network packet encoders/decoders for over 550 protocol
+fragments.
+Layer 2, routing, and multicast protocols: Ethernet, LLC, ARP, PPP,
+LCP,
+IPCP, RIPv1, RIPv2, OSPFv2, BGP4, IGMP, DVMRP, PIM, DHCP, SNMP, TFTP,
+IP,
+IP Options, TCP, TCP Options, ICMP, ISIS, Integrated ISIS, DOCSIS BPI
+&amp; BPI+, MPLS, RSVP.</li>
+    <li> Finite State Machine framework (including support for timers,
+timeout
+events, packet filters, packet events, named events) for sending and
+receiving packets and building complex FSMs and protocol simulations</li>
+    <li> Test Execution Manager for building, running, logging,
+reporting pass/fail status for automated test scripts written in tcl</li>
+    <ul>
+      <li> Test template generator</li>
+      <li> Test template generator for protocol test that uses an FSM</li>
+      <li> All tests can send/receive packets using any Linux supported
+Network
+Interface Card (NIC)</li>
+    </ul>
+    <li> Realtime Monitoring and decoding for Ethernet and Sonet and
+any other
+Linux supported Network Interface Card (NIC)</li>
+    <li> Ability to capture packets in Monitor, change fields, and
+resend the
+packets.</li>
+    <li> Simulators for various routing protocols:</li>
+    <ol>
+      <li> BGP4 router simulator: simulate either one peer or multiple
+peers all
+on one Ethernet.&nbsp; This has been used to test the limits of carrier
+class routers (e.g., Juniper) sending over 1 million NLRIs and
+simulating over 250
+BGP4 peers</li>
+      <li> OSPF router simulator:&nbsp; simulate either one OSPF peer
+or multiple peers all on one Ethernet.&nbsp; This has been used to test
+scaling (e.g., over 100 OSPFv2 peers and over 30,000 routes in the
+RUT's OSPF database all
+running overnight)</li>
+      <li> RIP router simulator for RIPv1 and RIPv2</li>
+      <li> Multicast Testing</li>
+      <ul>
+        <li> IGMP speaker simulates a host that does IGMP Joins and
+Leaves; you
+can have multiple IGMP speakers running simultaneously</li>
+        <li> DVMRP router simulator simulates DVMRP speaker that does
+DVMRP probes, grafts, prunes, and report packets.</li>
+        <li> MFlow for generating multiple multicast packet flows</li>
+      </ul>
+      <li> ARP simulator will allow one to simulate an Ethernet host
+that answers ARP (used for testing packet forwarding and to answer ARP
+request for simulated OSPF speakers).</li>
+      <li> ISIS Simulator (under development)</li>
+    </ol>
+    <li> Online help</li>
+    <ul>
+      <li> Each object has its own help information</li>
+      <li> Help on each command available at the Command Line</li>
+      <li> Documentation available in HTML form</li>
+    </ul>
+    <li> Test Suites Written By Users of NetPST</li>
+    <ol>
+      <li> UNH IOL RIP suite (automated)</li>
+      <li> UNH IOL BGP4 suite (automated)</li>
+      <li> Some test cases for UNH IOL OSPF suite</li>
+    </ol>
+    <li> Documentation in the form of HTML pages and online help that
+comes
+with the software.</li>
+  </ul>
+All functionality that requires fast execution speed (e.g.,
+encoding/decoding packets, running FSMs, etc.) is all written in
+C/C++.&nbsp; Tcl/tk/itcl/itk serves as a front end for this
+functionality.&nbsp; This gives you the flexibility
+and simplicity of an interpreted scripting language plus the speed and
+efficiency
+of a compiled language.
+  <p>NetPST has enough functionality to allow a user to write a full
+implementation of a routing protocol using tcl scripting.&nbsp;
+However, because the purpose of NetPST is for testing, you only need to
+implement that small subset of
+the routing protocol that is big enough to make a Device Under Test or
+Router
+Under Test (DUT or RUT) "think" that it is connected to a router
+running
+a full implementation of the routing protocol.</p>
+</blockquote>
+<blockquote>Each command described can be executed on the NetPST CLI
+(Command Line Interface) or executed from within a test script.&nbsp;
+It is recommended that you experiment with commands using the CLI until
+you get them to work as needed and then incorporate them into a test
+script.
+  <p>Note that there are four primary areas of functionality and four
+primary commands: NPktIface, NPacket, NFSM, and NTestMgr.&nbsp; These
+are for creating: </p>
+  <ol>
+    <li> Packet Interfaces: Used to send/receive data in the form of
+packets</li>
+    <li> Packets: Used to get fields, modify fields, and display packet
+information</li>
+    <li> FSMs: Used to simulate complex protocol state machines</li>
+    <li> Test Execution Manager: Used to automate running of test
+scripts in
+the form of test suites</li>
+  </ol>
+Each one starts with an "N" to distinguish it from the tcl built-in
+commands.
+  <p>NetPST was written and developed on Linux using gnu C/C++ tools.</p>
+</blockquote>
+<br>
+</body>
+</html>
