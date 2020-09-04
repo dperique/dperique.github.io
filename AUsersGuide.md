@@ -4,7 +4,7 @@
 
 To install the NetPST, you will need (as a minimum):
 
-* VM with one core and 0.5G RAM (I believe AWS freei-tier EC2 instance will do)
+* VM with one core and 0.5G RAM (I believe AWS free-tier EC2 instance will do)
   * 32-bit support is required
 * For graphics, you will need 1280x1024 resolution to view packet captures
   * Some kind of graphics manager (X windows or any other will do)
@@ -86,7 +86,7 @@ Each command described can be executed on the NetPST CLI (Command Line Interface
 from within a test script.  It is recommended that you experiment with commands using the CLI
 until you get them to work as needed and then incorporate them into a test script.
 
-## Summary
+## Functionality Summary
 
 There are four primary areas of functionality and four primary commands: NPktIface, NPacket,
 NFSM, and NTestMgr.  These are for creating:
