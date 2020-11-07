@@ -110,3 +110,19 @@ NFSM, and NTestMgr.  These are for creating:</p>
 <p>Each one starts with an &quot;N&quot; to distinguish it from the tcl built-in commands.
 NetPST was written and developed on Linux using gnu C/C++ tools.</p>
 
+h2 id="Under Development">Under Development</h2>
+<p>NetPST is undergoing modernization using an encapsulate and scale method:</p>
+<ul>
+<li>NetPST can now be built in a Centos 7.8 (32 bit) container and then run it from another container that
+  implements a window'ed environment (see https://github.com/dperique/dev-docker-env)</li>
+<li>The plan is to make it so that we can use a RESTful API to control NetPST and startup various protocol
+  simulations in addition to supporting interactive workflow</li>
+<li>Containerizing (encapsulating) and running NetPST this way allows us to create a much larger and robust
+  scaling simulation running on top of Kubernetes or any container service in a cloud.  With autoscaling,
+  proper NATing and a logically centralized and physically distributed (perhaps on the same Kubernetes cluster)
+  routing protocol simulator and route generators, the scaling possibilities are huge.</li>
+<li>Someday, we'll explore replacing tcl/itcl with Python/tkInter and moving to a 64-bit system.
+</ul>
+<p>Each one starts with an &quot;N&quot; to distinguish it from the tcl built-in commands.
+NetPST was written and developed on Linux using gnu C/C++ tools.</p>
+
